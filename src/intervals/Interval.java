@@ -18,7 +18,9 @@ public class Interval {
 
 	public boolean includes(double value) {
 		switch (opening) {
+		//clases
 		case BOTH_OPENED:
+			//Extraer código ducplicado con clases nuevas.
 			return minimum < value && value < maximum;
 		case LEFT_OPENED:
 			return minimum < value && value <= maximum;
