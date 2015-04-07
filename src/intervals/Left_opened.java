@@ -14,11 +14,6 @@ public class Left_opened extends Interval {
 	}
 
 	@Override
-	public boolean includes(Interval interval) {
-		return interval.includes(this);
-	}
-
-	@Override
 	public boolean includes(Both_opened interval) {
 		boolean minimumIncluded = interval.includes(this.getMinimum());
 		boolean maximumIncluded = interval.includes(this.getMaximum());

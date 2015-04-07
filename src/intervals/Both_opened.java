@@ -11,12 +11,7 @@ public class Both_opened extends Interval {
 			return this.getMinimum() < value && value < this.getMaximum();
 			
 	}
-
-	@Override
-	public boolean includes(Interval interval) {
-		return interval.includes(this);
-		
-	}
+	
 
 	@Override
 	public boolean includes(Both_opened interval) {

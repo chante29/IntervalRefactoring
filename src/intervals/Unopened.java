@@ -11,12 +11,7 @@ public class Unopened extends Interval {
 	public boolean includes(double value) {
 		return this.getMinimum() <= value && value <= this.getMaximum();
 	}
-
-	@Override
-	public boolean includes(Interval interval) {
-		return interval.includes(this);
-	}
-
+	
 	@Override
 	public boolean includes(Both_opened interval) {
 		boolean minimumIncluded = interval.includes(this.getMinimum());
