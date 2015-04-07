@@ -35,4 +35,28 @@ public class Unopened extends Interval {
 			}
 	}
 
+	@Override
+	public boolean includes(Both_opened interval) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean includes(Left_opened interval) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean includes(Right_opened interval) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean includes(Unopened interval) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
