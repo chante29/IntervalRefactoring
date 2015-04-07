@@ -1,19 +1,16 @@
 package intervals;
 
 public abstract class Interval {
-
-	private double minimum;
-	private double maximum;
+	private Point point;
 	private Opening opening;
-
+	
 	public Interval(double minimum, double maximum, Opening opening) {
-		this.setMinimum(minimum);
-		this.setMaximum(maximum);
+		this.setPoint(new Point(minimum, maximum));
 		this.setOpening(opening);
 	}
 
 	public double midPoint() {
-		return (this.getMaximum() + this.getMinimum()) / 2;
+		return this.getPoint().midPoint();
 	}
 
 	public abstract boolean includes(double value); 
@@ -21,7 +18,7 @@ public abstract class Interval {
 	public abstract boolean includes(Interval interval);
 
 	public boolean intersectsWith(Interval interval) {
-		if (minimum == interval.maximum) {
+		if (this.getPoint().getMinimum() == interval.getPoint().getMaximum()) {
 			switch (opening) {
 			case BOTH_OPENED:
 			case LEFT_OPENED:
@@ -35,7 +32,7 @@ public abstract class Interval {
 				return false;
 			}
 		}
-		if (maximum == interval.minimum) {
+		if (this.getPoint().getMaximum() == interval.getPoint().getMinimum()) {
 			switch (opening) {
 			case BOTH_OPENED:
 			case RIGHT_OPENED:
@@ -49,8 +46,8 @@ public abstract class Interval {
 				return false;
 			}
 		}
-		return this.includes(interval.minimum)
-				|| this.includes(interval.maximum);
+		return this.includes(interval.getPoint().getMinimum())
+				|| this.includes(interval.getPoint().getMaximum());
 	}
 
 	@Override
@@ -65,21 +62,6 @@ public abstract class Interval {
 		return false;
 	}
 
-	public double getMinimum() {
-		return minimum;
-	}
-
-	public void setMinimum(double minimum) {
-		this.minimum = minimum;
-	}
-
-	public double getMaximum() {
-		return maximum;
-	}
-
-	public void setMaximum(double maximum) {
-		this.maximum = maximum;
-	}
 
 	public Opening getOpening() {
 		return opening;
@@ -89,5 +71,20 @@ public abstract class Interval {
 		this.opening = opening;
 	}
 
+	public Point getPoint() {
+		return point;
+	}
+
+	public void setPoint(Point point) {
+		this.point = point;
+	}
+
+	public double getMinimum() {
+		return this.getPoint().getMinimum();
+	}
+	
+	public double getMaximum() {
+		return this.getPoint().getMaximum();
+	}
 	
 }
