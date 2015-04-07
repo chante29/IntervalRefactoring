@@ -7,9 +7,9 @@ public class Interval {
 	private Opening opening;
 
 	public Interval(double minimum, double maximum, Opening opening) {
-		this.minimum = minimum;
-		this.maximum = maximum;
-		this.opening = opening;
+		this.setMinimum(minimum);
+		this.setMaximum(maximum);
+		this.setOpening(opening);
 	}
 
 	public double midPoint() {
@@ -160,4 +160,29 @@ public class Interval {
 		return false;
 	}
 
+	public double getMinimum() {
+		return minimum;
+	}
+
+	public void setMinimum(double minimum) {
+		this.minimum = minimum;
+	}
+
+	public double getMaximum() {
+		return maximum;
+	}
+
+	public void setMaximum(double maximum) {
+		this.maximum = maximum;
+	}
+
+	public Opening getOpening() {
+		return opening;
+	}
+
+	public void setOpening(Opening opening) {
+		this.opening = opening;
+	}
+
+	
 }
