@@ -41,5 +41,10 @@ public class Right_opened extends Interval {
 		boolean maximumIncluded = interval.includes(this.getMaximum());
 		return minimumIncluded && maximumIncluded ;
 	}
+	
+	@Override
+	public boolean includes(Interval interval) {
+		return interval.includes(this);
+	}
 
 }

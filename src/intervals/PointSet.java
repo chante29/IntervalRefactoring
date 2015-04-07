@@ -1,11 +1,11 @@
 package intervals;
 
-public class SetPoint {
+public class PointSet {
 	private double minimum;
 	private double maximum;
 	
 	
-	public SetPoint(double minimum, double maximum) {
+	public PointSet(double minimum, double maximum) {
 		super();
 		this.minimum = minimum;
 		this.maximum = maximum;

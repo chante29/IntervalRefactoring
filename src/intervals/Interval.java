@@ -1,11 +1,11 @@
 package intervals;
 
 public abstract class Interval {
-	private SetPoint point;
+	private PointSet point;
 	private Opening opening;
 	
 	public Interval(double minimum, double maximum, Opening opening) {
-		this.setPoint(new SetPoint(minimum, maximum));
+		this.setPoint(new PointSet(minimum, maximum));
 		this.setOpening(opening);
 	}
 
@@ -15,10 +15,7 @@ public abstract class Interval {
 
 	public abstract boolean includes(double value); 
 	
-	public boolean includes(Interval interval) {
-		return interval.includes(this);
-		
-	}
+	public abstract boolean includes(Interval interval);
 
 	public abstract boolean includes(Both_opened interval);
 	
@@ -82,11 +79,11 @@ public abstract class Interval {
 		this.opening = opening;
 	}
 
-	public SetPoint getPoint() {
+	public PointSet getPoint() {
 		return point;
 	}
 
-	public void setPoint(SetPoint point) {
+	public void setPoint(PointSet point) {
 		this.point = point;
 	}
 

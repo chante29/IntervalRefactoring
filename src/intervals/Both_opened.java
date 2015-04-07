@@ -41,4 +41,9 @@ public class Both_opened extends Interval {
 		return minimumIncluded && maximumIncluded ;
 	}
 
+	@Override
+	public boolean includes(Interval interval) {
+		return interval.includes(this);
+	}
+
 }
