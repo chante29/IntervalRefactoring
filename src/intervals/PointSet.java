@@ -4,28 +4,9 @@ public class PointSet {
 	private Point minimum;
 	private Point maximum;
 
-
-	public PointSet(double minimum, double maximum, Opening typeInterval) {
-		switch (typeInterval) {
-		case BOTH_OPENED:
-			this.minimum = new Point(minimum, Type_point.FROM_POINT); 
-			this.maximum = new Point(maximum, Type_point.UNTIL_POINT);
-			break;
-		case LEFT_OPENED:
-			this.minimum = new Point(minimum, Type_point.FROM_POINT); 
-			this.maximum = new Point(maximum, Type_point.UNTIL_EXACT_POINT);
-			break;
-		case RIGHT_OPENED:
-			this.minimum = new Point(minimum, Type_point.FROM_EXACT_POINT); 
-			this.maximum = new Point(maximum, Type_point.UNTIL_POINT);
-			break;
-		case UNOPENED:
-			this.minimum = new Point(minimum, Type_point.FROM_EXACT_POINT); 
-			this.maximum = new Point(maximum, Type_point.UNTIL_EXACT_POINT);
-			break;
-		default:
-			assert false;
-		}
+	public PointSet(Point minimum, Point maximum, Opening typeInterval) {
+		this.minimum = minimum;
+		this.maximum = maximum;
 	}
 
 	public double midPoint() {

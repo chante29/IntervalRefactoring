@@ -4,7 +4,7 @@ public abstract class Interval {
 	private PointSet point;
 	private Opening opening;
 	
-	public Interval(double minimum, double maximum, Opening opening) {
+	public Interval(Point minimum, Point maximum, Opening opening) {
 		this.setPoint(new PointSet(minimum, maximum, opening));
 		this.setOpening(opening);
 	}
