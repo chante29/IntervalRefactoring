@@ -3,7 +3,7 @@ package intervals;
 public class Until_exact_point extends Point {
 
 	public Until_exact_point(double minimum) {
-		super(minimum, Type_point.UNTIL_EXACT_POINT);
+		super(minimum);
 	}
 
 	@Override

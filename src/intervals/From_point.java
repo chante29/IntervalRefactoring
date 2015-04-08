@@ -3,7 +3,7 @@ package intervals;
 public class From_point extends Point{
 
 	public From_point(double minimum) {
-		super(minimum, Type_point.FROM_POINT);
+		super(minimum);
 	}
 
 	@Override
