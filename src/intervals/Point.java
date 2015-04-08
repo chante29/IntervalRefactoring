@@ -48,9 +48,7 @@ public class Point {
 			case FROM_POINT:
 				return this.getX() == point.getX();
 			case FROM_EXACT_POINT:
-				return false;
 			case UNTIL_EXACT_POINT:
-				return false;
 			case UNTIL_POINT:
 				return false;
 			default:
@@ -60,9 +58,7 @@ public class Point {
 		case FROM_EXACT_POINT:
 			switch(point.getType()){
 			case FROM_POINT:
-				return this.getX() == point.getX();
 			case FROM_EXACT_POINT:
-				return this.getX() == point.getX();
 			case UNTIL_EXACT_POINT:
 				return this.getX() == point.getX();
 			case UNTIL_POINT:
@@ -76,9 +72,7 @@ public class Point {
 			case FROM_POINT:
 				return false;
 			case FROM_EXACT_POINT:
-				return this.getX() == point.getX();
 			case UNTIL_EXACT_POINT:
-				return this.getX() == point.getX();
 			case UNTIL_POINT:
 				return this.getX() == point.getX();
 			default:
@@ -88,9 +82,7 @@ public class Point {
 		case UNTIL_POINT:
 			switch(point.getType()){
 			case FROM_POINT:
-				return false;
 			case FROM_EXACT_POINT:
-				return false;
 			case UNTIL_EXACT_POINT:
 				return false;
 			case UNTIL_POINT:
