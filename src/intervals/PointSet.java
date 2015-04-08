@@ -46,8 +46,8 @@ public class PointSet {
 	}
 
 	public boolean includes(Interval interval) {
-		return (this.minimumIncludes(interval.getMinimum()) || this.getPointMinimum().includes(interval.getPoint().getPointMinimum())) 
-				&& (this.maximumIncludes(interval.getMaximum()) || this.getPointMaximum().includes(interval.getPoint().getPointMaximum()));
+		return this.getPointMinimum().includes(interval.getPoint().getPointMinimum()) 
+				&& this.getPointMaximum().includes(interval.getPoint().getPointMaximum());
 	}
 
 

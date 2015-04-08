@@ -37,7 +37,11 @@ public class Point {
 		}	
 	}
 	
-	public boolean includes(Point point){
+	public boolean includes (Point point){
+		return this.includes(point.getX()) || this.includesExactPoint(point);
+	}
+	
+	private boolean includesExactPoint(Point point){
 		switch(type){
 		case FROM_POINT:
 			switch(point.getType()){
