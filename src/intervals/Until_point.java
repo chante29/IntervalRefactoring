@@ -13,17 +13,27 @@ public class Until_point extends Point{
 
 	@Override
 	public boolean includesExactPoint(Point point) {
-		switch(point.getType()){
-		case FROM_POINT:
-		case FROM_EXACT_POINT:
-		case UNTIL_EXACT_POINT:
-			return false;
-		case UNTIL_POINT:
-			return this.getX() == point.getX();
-		default:
-			assert false;
-			return this.getX() == point.getX();
-		}
+		return point.includesExactPoint(this);
+	}
+
+	@Override
+	public boolean includesExactPoint(From_point point) {
+		return false;
+	}
+
+	@Override
+	public boolean includesExactPoint(From_exact_point point) {
+		return false;
+	}
+
+	@Override
+	public boolean includesExactPoint(Until_exact_point point) {
+		return false;
+	}
+
+	@Override
+	public boolean includesExactPoint(Until_point point) {
+		return this.getX() == point.getX();
 	}
 
 }

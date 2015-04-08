@@ -29,4 +29,12 @@ public abstract class Point {
 	
 	public abstract boolean includesExactPoint(Point point);
 	
+	public abstract boolean includesExactPoint(From_point point);
+	
+	public abstract boolean includesExactPoint(From_exact_point point);
+	
+	public abstract boolean includesExactPoint(Until_exact_point point);
+	
+	public abstract boolean includesExactPoint(Until_point point);
+	
 }
