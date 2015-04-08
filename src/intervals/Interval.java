@@ -17,15 +17,11 @@ public abstract class Interval {
 		return this.point.minimumIncludes(value) && this.point.maximumIncludes(value);
 	} 
 	
-	public abstract boolean includes(Interval interval);
-
-	public abstract boolean includes(Both_opened interval);
-	
-	public abstract boolean includes(Left_opened interval);
-	
-	public abstract boolean includes(Right_opened interval);
-	
-	public abstract boolean includes(Unopened interval);
+	public boolean includes(Interval interval){
+		return this.point.includes(interval);
+		//return this.point.minimumIncludes(interval.getMinimum()) && this.point.maximumIncludes(interval.getMaximum());
+		
+	}
 
 	public boolean intersectsWith(Interval interval) {
 		if(this.getMinimum() > interval.getMaximum() || this.getMaximum() < interval.getMinimum()){
@@ -99,6 +95,14 @@ public abstract class Interval {
 	
 	public double getMaximum() {
 		return this.getPoint().getMaximum();
+	}
+	
+	public Type_point getTypeMinimum(){
+		return this.point.getTypeMinimum();
+	}
+	
+	public Type_point getTypeMaximum(){
+		return this.point.getTypeMaximum();
 	}
 	
 }

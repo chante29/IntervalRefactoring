@@ -6,38 +6,4 @@ public class Both_opened extends Interval {
 		super(minimum, maximum, opening);
 	}
 	
-
-	@Override
-	public boolean includes(Both_opened interval) {
-		boolean minimumIncluded = interval.includes(this.getMinimum());
-		boolean maximumIncluded = interval.includes(this.getMaximum());
-		return ((minimumIncluded || interval.getMinimum() == this.getMinimum()) && (maximumIncluded || interval.getMaximum() == this.getMaximum()));
-	}
-
-	@Override
-	public boolean includes(Left_opened interval) {
-		boolean minimumIncluded = interval.includes(this.getMinimum());
-		boolean maximumIncluded = interval.includes(this.getMaximum());
-		return ((minimumIncluded || interval.getMinimum() == this.getMinimum()) && maximumIncluded);
-	}
-
-	@Override
-	public boolean includes(Right_opened interval) {
-		boolean minimumIncluded = interval.includes(this.getMinimum());
-		boolean maximumIncluded = interval.includes(this.getMaximum());
-		return (minimumIncluded &&  (maximumIncluded || interval.getMaximum() == this.getMaximum()));
-	}
-
-	@Override
-	public boolean includes(Unopened interval) {
-		boolean minimumIncluded = interval.includes(this.getMinimum());
-		boolean maximumIncluded = interval.includes(this.getMaximum());
-		return minimumIncluded && maximumIncluded ;
-	}
-
-	@Override
-	public boolean includes(Interval interval) {
-		return interval.includes(this);
-	}
-
 }
