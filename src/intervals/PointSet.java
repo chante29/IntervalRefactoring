@@ -1,14 +1,27 @@
 package intervals;
 
 public class PointSet {
-	private double minimum;
-	private double maximum;
+	private Point minimum;
+	private Point maximum;
 	
 	
-	public PointSet(double minimum, double maximum) {
-		super();
-		this.minimum = minimum;
-		this.maximum = maximum;
+	public PointSet(double minimum, double maximum, Opening typeInterval) {
+		switch (typeInterval) {
+		case BOTH_OPENED:
+			this.minimum = new Point(minimum, Type_point.FROM_POINT); 
+			this.maximum = new Point(maximum, Type_point.UNTIL_POINT);
+		case LEFT_OPENED:
+			this.minimum = new Point(minimum, Type_point.FROM_POINT); 
+			this.maximum = new Point(maximum, Type_point.UNTIL_EXACT_POINT);
+		case RIGHT_OPENED:
+			this.minimum = new Point(minimum, Type_point.FROM_EXACT_POINT); 
+			this.maximum = new Point(maximum, Type_point.UNTIL_POINT);
+		case UNOPENED:
+			this.minimum = new Point(minimum, Type_point.FROM_EXACT_POINT); 
+			this.maximum = new Point(maximum, Type_point.UNTIL_EXACT_POINT);
+		default:
+			assert false;
+		}
 	}
 	
 	public double midPoint() {
@@ -16,16 +29,11 @@ public class PointSet {
 	}
 	
 	public double getMinimum() {
-		return minimum;
+		return minimum.getX();
 	}
-	public void setMinimum(double minimum) {
-		this.minimum = minimum;
-	}
+	
 	public double getMaximum() {
-		return maximum;
-	}
-	public void setMaximum(double maximum) {
-		this.maximum = maximum;
+		return maximum.getX();
 	}
 	
 	

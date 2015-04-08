@@ -5,7 +5,7 @@ public abstract class Interval {
 	private Opening opening;
 	
 	public Interval(double minimum, double maximum, Opening opening) {
-		this.setPoint(new PointSet(minimum, maximum));
+		this.setPoint(new PointSet(minimum, maximum, opening));
 		this.setOpening(opening);
 	}
 
@@ -26,6 +26,10 @@ public abstract class Interval {
 	public abstract boolean includes(Unopened interval);
 
 	public boolean intersectsWith(Interval interval) {
+		if(this.getMinimum() > interval.getMaximum() || this.getMaximum() < interval.getMinimum()){
+			return false;
+		}
+		
 		if (this.getMinimum() == interval.getMaximum()) {
 			switch (opening) {
 			case BOTH_OPENED:
