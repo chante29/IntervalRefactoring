@@ -29,13 +29,6 @@ public class PointSet {
 		return this.maximum.includes(value);
 	}
 
-	public Type_point getTypeMinimum(){
-		return this.minimum.getType();
-	}
-
-	public Type_point getTypeMaximum(){
-		return this.maximum.getType();
-	}
 	
 	public Point getPointMinimum(){
 		return this.minimum;

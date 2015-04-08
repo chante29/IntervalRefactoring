@@ -97,12 +97,4 @@ public abstract class Interval {
 		return this.getPoint().getMaximum();
 	}
 	
-	public Type_point getTypeMinimum(){
-		return this.point.getTypeMinimum();
-	}
-	
-	public Type_point getTypeMaximum(){
-		return this.point.getTypeMaximum();
-	}
-	
 }
