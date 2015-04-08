@@ -8,12 +8,6 @@ public class Left_opened extends Interval {
 	}
 
 	@Override
-	public boolean includes(double value) {
-		return this.getMinimum() < value && value <= this.getMaximum();
-			
-	}
-
-	@Override
 	public boolean includes(Both_opened interval) {
 		boolean minimumIncluded = interval.includes(this.getMinimum());
 		boolean maximumIncluded = interval.includes(this.getMaximum());

@@ -10,15 +10,19 @@ public class PointSet {
 		case BOTH_OPENED:
 			this.minimum = new Point(minimum, Type_point.FROM_POINT); 
 			this.maximum = new Point(maximum, Type_point.UNTIL_POINT);
+			break;
 		case LEFT_OPENED:
 			this.minimum = new Point(minimum, Type_point.FROM_POINT); 
 			this.maximum = new Point(maximum, Type_point.UNTIL_EXACT_POINT);
+			break;
 		case RIGHT_OPENED:
 			this.minimum = new Point(minimum, Type_point.FROM_EXACT_POINT); 
 			this.maximum = new Point(maximum, Type_point.UNTIL_POINT);
+			break;
 		case UNOPENED:
 			this.minimum = new Point(minimum, Type_point.FROM_EXACT_POINT); 
 			this.maximum = new Point(maximum, Type_point.UNTIL_EXACT_POINT);
+			break;
 		default:
 			assert false;
 		}
@@ -34,6 +38,14 @@ public class PointSet {
 	
 	public double getMaximum() {
 		return maximum.getX();
+	}
+	
+	public boolean minimumIncludes(double value){
+		return this.minimum.includes(value);
+	}
+	
+	public boolean maximumIncludes(double value){
+		return this.maximum.includes(value);
 	}
 	
 	
