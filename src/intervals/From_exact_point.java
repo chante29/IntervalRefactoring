@@ -33,7 +33,7 @@ public class From_exact_point extends Point {
 
 	@Override
 	public boolean includesExactPoint(Until_point point) {
-		return this.getX() == point.getX();
+		return false;
 	}
 
 }

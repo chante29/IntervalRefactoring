@@ -18,7 +18,7 @@ public class Until_exact_point extends Point {
 
 	@Override
 	public boolean includesExactPoint(From_point point) {
-		return this.getX() == point.getX();
+		return false;
 	}
 
 	@Override

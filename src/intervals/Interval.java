@@ -19,45 +19,10 @@ public abstract class Interval {
 	
 	public boolean includes(Interval interval){
 		return this.point.includes(interval);
-		//return this.point.minimumIncludes(interval.getMinimum()) && this.point.maximumIncludes(interval.getMaximum());
-		
 	}
 
 	public boolean intersectsWith(Interval interval) {
-		if(this.getMinimum() > interval.getMaximum() || this.getMaximum() < interval.getMinimum()){
-			return false;
-		}
-		
-		if (this.getMinimum() == interval.getMaximum()) {
-			switch (opening) {
-			case BOTH_OPENED:
-			case LEFT_OPENED:
-				return false;
-			case RIGHT_OPENED:
-			case UNOPENED:
-				return interval.opening == Opening.LEFT_OPENED ||
-						interval.opening == Opening.UNOPENED;
-			default:
-				assert false;
-				return false;
-			}
-		}
-		if (this.getPoint().getMaximum() == interval.getPoint().getMinimum()) {
-			switch (opening) {
-			case BOTH_OPENED:
-			case RIGHT_OPENED:
-				return false;
-			case LEFT_OPENED:
-			case UNOPENED:
-				return interval.opening == Opening.RIGHT_OPENED ||
-						interval.opening == Opening.UNOPENED;
-			default:
-				assert false;
-				return false;
-			}
-		}
-		return this.includes(interval.getPoint().getMinimum())
-				|| this.includes(interval.getPoint().getMaximum());
+		return this.getPoint().intersectWith(interval.getPoint().getPointMinimum()) || this.getPoint().intersectWith(interval.getPoint().getPointMaximum());
 	}
 
 	@Override
