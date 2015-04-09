@@ -8,7 +8,7 @@ public class Until_exact_point extends Point {
 
 	@Override
 	public boolean includes(double value) {
-		return this.areGreatest(value) && this.areEquals(value);
+		return this.areGreatest(value) || this.areEquals(value);
 	}
 
 	@Override
