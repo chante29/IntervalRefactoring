@@ -10,7 +10,7 @@ public abstract class Interval {
 	}
 
 	public double midPoint() {
-		return this.getPointSet().midPoint();
+		return this.pointSet.midPoint();
 	}
 
 	public boolean includes(double value){
@@ -22,7 +22,7 @@ public abstract class Interval {
 	}
 
 	public boolean intersectsWith(Interval interval) {
-		return this.getPointSet().intersectWith(interval.getPointSet().getPointMinimum()) || this.getPointSet().intersectWith(interval.getPointSet().getPointMaximum());
+		return this.pointSet.intersectWith(interval.pointSet.getPointMinimum()) || this.pointSet.intersectWith(interval.pointSet.getPointMaximum());
 	}
 
 	@Override
@@ -45,17 +45,21 @@ public abstract class Interval {
 	public void setOpening(Opening opening) {
 		this.opening = opening;
 	}
-
-	public PointSet getPointSet() {
-		return pointSet;
+	
+	public Point getPointMinimum() {
+		return this.pointSet.getPointMinimum();
+	}
+	
+	public Point getPointMaximum() {
+		return this.pointSet.getPointMaximum();
 	}
 	
 	public double getMinimum() {
-		return this.getPointSet().getMinimum();
+		return this.pointSet.getMinimum();
 	}
 	
 	public double getMaximum() {
-		return this.getPointSet().getMaximum();
+		return this.pointSet.getMaximum();
 	}
 	
 }
