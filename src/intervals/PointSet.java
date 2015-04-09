@@ -39,8 +39,8 @@ public class PointSet {
 	}
 
 	public boolean includes(Interval interval) {
-		return this.getPointMinimum().includes(interval.getPoint().getPointMinimum()) 
-				&& this.getPointMaximum().includes(interval.getPoint().getPointMaximum());
+		return this.getPointMinimum().includes(interval.getPointSet().getPointMinimum()) 
+				&& this.getPointMaximum().includes(interval.getPointSet().getPointMaximum());
 	}
 	
 	public boolean intersectWith(Point point){

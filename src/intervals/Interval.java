@@ -1,28 +1,28 @@
 package intervals;
 
 public abstract class Interval {
-	private PointSet point;
+	private PointSet pointSet;
 	private Opening opening;
 	
 	public Interval(Point minimum, Point maximum, Opening opening) {
-		this.setPoint(new PointSet(minimum, maximum, opening));
+		this.pointSet = new PointSet(minimum, maximum, opening);
 		this.setOpening(opening);
 	}
 
 	public double midPoint() {
-		return this.getPoint().midPoint();
+		return this.getPointSet().midPoint();
 	}
 
 	public boolean includes(double value){
-		return this.point.minimumIncludes(value) && this.point.maximumIncludes(value);
+		return this.pointSet.minimumIncludes(value) && this.pointSet.maximumIncludes(value);
 	} 
 	
 	public boolean includes(Interval interval){
-		return this.point.includes(interval);
+		return this.pointSet.includes(interval);
 	}
 
 	public boolean intersectsWith(Interval interval) {
-		return this.getPoint().intersectWith(interval.getPoint().getPointMinimum()) || this.getPoint().intersectWith(interval.getPoint().getPointMaximum());
+		return this.getPointSet().intersectWith(interval.getPointSet().getPointMinimum()) || this.getPointSet().intersectWith(interval.getPointSet().getPointMaximum());
 	}
 
 	@Override
@@ -46,20 +46,16 @@ public abstract class Interval {
 		this.opening = opening;
 	}
 
-	public PointSet getPoint() {
-		return point;
+	public PointSet getPointSet() {
+		return pointSet;
 	}
-
-	public void setPoint(PointSet point) {
-		this.point = point;
-	}
-
+	
 	public double getMinimum() {
-		return this.getPoint().getMinimum();
+		return this.getPointSet().getMinimum();
 	}
 	
 	public double getMaximum() {
-		return this.getPoint().getMaximum();
+		return this.getPointSet().getMaximum();
 	}
 	
 }

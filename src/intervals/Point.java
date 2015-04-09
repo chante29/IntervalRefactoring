@@ -30,4 +30,16 @@ public abstract class Point {
 	
 	public abstract boolean includesExactPoint(Until_point point);
 	
+	public boolean areLess(Point point){
+		return this.getX() < point.getX();
+	}
+	
+	public boolean areGreatest(Point point){
+		return this.getX() > point.getX();
+	}
+	
+	public boolean areEquals(Point point){
+		return this.getX() == point.getX();
+	}
+	
 }
