@@ -14,11 +14,11 @@ public class PointSet {
 	}
 
 	public double getMinimum() {
-		return minimum.getX();
+		return minimum.getValue();
 	}
 
 	public double getMaximum() {
-		return maximum.getX();
+		return maximum.getValue();
 	}
 
 	public boolean minimumIncludes(double value){
@@ -44,7 +44,7 @@ public class PointSet {
 	}
 	
 	public boolean intersectWith(Point point){
-		return (this.getPointMinimum().getX() < point.getX() && this.getPointMaximum().getX() > point.getX())
+		return (this.getPointMinimum().getValue() < point.getValue() && this.getPointMaximum().getValue() > point.getValue())
 				|| (this.getPointMinimum().includesExactPoint(point) || this.getPointMaximum().includesExactPoint(point));
 	}
 

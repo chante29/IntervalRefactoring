@@ -8,7 +8,7 @@ public class From_point extends Point{
 
 	@Override
 	public boolean includes(double value) {
-		return this.getX() < value;
+		return this.areLess(value);
 	}
 
 	@Override
@@ -18,7 +18,7 @@ public class From_point extends Point{
 
 	@Override
 	public boolean includesExactPoint(From_point point) {
-		return this.getX() == point.getX();
+		return this.areEquals(point.getValue());
 	}
 
 	@Override

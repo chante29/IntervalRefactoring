@@ -8,7 +8,7 @@ public class Until_exact_point extends Point {
 
 	@Override
 	public boolean includes(double value) {
-		return this.getX() >= value;
+		return this.areGreatest(value) && this.areEquals(value);
 	}
 
 	@Override
@@ -23,12 +23,12 @@ public class Until_exact_point extends Point {
 
 	@Override
 	public boolean includesExactPoint(From_exact_point point) {
-		return this.getX() == point.getX();
+		return this.areEquals(point.getValue());
 	}
 
 	@Override
 	public boolean includesExactPoint(Until_exact_point point) {
-		return this.getX() == point.getX();
+		return this.areEquals(point.getValue());
 	}
 
 	@Override
