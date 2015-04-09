@@ -44,7 +44,7 @@ public class PointSet {
 	}
 	
 	public boolean intersectWith(Point point){
-		return (this.getPointMinimum().getValue() < point.getValue() && this.getPointMaximum().getValue() > point.getValue())
+		return (this.getPointMinimum().areLess(point.getValue()) && this.getPointMaximum().areGreatest(point.getValue()))
 				|| (this.getPointMinimum().includesExactPoint(point) || this.getPointMaximum().includesExactPoint(point));
 	}
 

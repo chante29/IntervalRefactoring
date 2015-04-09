@@ -22,7 +22,7 @@ public abstract class Interval {
 	}
 
 	public boolean intersectsWith(Interval interval) {
-		return this.pointSet.intersectWith(interval.pointSet.getPointMinimum()) || this.pointSet.intersectWith(interval.pointSet.getPointMaximum());
+		return this.pointSet.intersectWith(interval.getPointMinimum()) || this.pointSet.intersectWith(interval.getPointMaximum());
 	}
 
 	@Override
