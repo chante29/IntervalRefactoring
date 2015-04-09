@@ -22,7 +22,7 @@ public class PointSet {
 	}
 
 	public boolean minimumIncludes(double value){
-		return this.minimum.includes(value);
+		return this.minimum.includes(value); 
 	}
 
 	public boolean maximumIncludes(double value){
