@@ -22,12 +22,7 @@ public class Until_point extends Direction_point{
 	}
 
 	@Override
-	public boolean includesExactPoint(From_exact_point point) {
-		return false;
-	}
-
-	@Override
-	public boolean includesExactPoint(Until_exact_point point) {
+	public boolean includesExactPoint(Exact_point point) {
 		return false;
 	}
 

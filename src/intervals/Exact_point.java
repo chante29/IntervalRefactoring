@@ -10,36 +10,26 @@ public class Exact_point extends Point {
 
 	@Override
 	public boolean includes(double value) {
-		return false;
+		return this.pointDirection.includes(value) || this.areEquals(value);
 	}
 
 	@Override
 	public boolean includesExactPoint(Point point) {
-		// TODO Auto-generated method stub
-		return false;
+		return point.includesExactPoint(this);
 	}
 
 	@Override
 	public boolean includesExactPoint(From_point point) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean includesExactPoint(From_exact_point point) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean includesExactPoint(Exact_point point) {
+		return this.areEquals(point.getValue());
 	}
-
-	@Override
-	public boolean includesExactPoint(Until_exact_point point) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
+	
 	@Override
 	public boolean includesExactPoint(Until_point point) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
