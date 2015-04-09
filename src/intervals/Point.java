@@ -22,13 +22,9 @@ public abstract class Point {
 		return this.includes(point.getValue()) || this.includesExactPoint(point);
 	}
 	
-	public abstract boolean includesExactPoint(Point point);
-	
-	public abstract boolean includesExactPoint(From_point point);
-	
-	public abstract boolean includesExactPoint(Exact_point point);
-	
-	public abstract boolean includesExactPoint(Until_point point);
+	public boolean includesExactPoint(Point point){
+		return this.getClass().equals(point.getClass()) && this.areEquals(point.getValue());
+	}
 	
 	public boolean areLess(double value){
 		return this.getValue() < value;
