@@ -43,9 +43,17 @@ public class PointSet {
 				&& this.getPointMaximum().includes(interval.getPointMaximum());
 	}
 	
+	
 	public boolean intersectWith(Point point){
-		return (this.getPointMinimum().areLess(point.getValue()) && this.getPointMaximum().areGreatest(point.getValue()))
-				|| (this.getPointMinimum().includesExactPoint(point) || this.getPointMaximum().includesExactPoint(point));
+		return this.includesInside(point) || this.includesInEdges(point);
+	}
+	
+	private boolean includesInside(Point point){
+		return (this.getPointMinimum().areLess(point.getValue()) && this.getPointMaximum().areGreatest(point.getValue()));
+	}
+	
+	private boolean includesInEdges(Point point){
+		return this.getPointMinimum().includesExactPoint(point) || this.getPointMaximum().includesExactPoint(point);
 	}
 
 
