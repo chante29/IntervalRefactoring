@@ -1,6 +1,6 @@
 package intervals;
 
-public class From_point extends Point{
+public class From_point extends Direction_point{
 
 	public From_point(double minimum) {
 		super(minimum);

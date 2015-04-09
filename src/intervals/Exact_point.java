@@ -1,39 +1,46 @@
 package intervals;
 
-public class Until_point extends Direction_point{
-
-	public Until_point(double minimum) {
-		super(minimum);
+public class Exact_point extends Point {
+	private Direction_point pointDirection;
+	
+	public Exact_point(Direction_point point) {
+		super(point.getValue());
+		this.pointDirection = point;
 	}
 
 	@Override
 	public boolean includes(double value) {
-		return this.areGreatest(value);
+		return false;
 	}
 
 	@Override
 	public boolean includesExactPoint(Point point) {
-		return point.includesExactPoint(this);
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	@Override
 	public boolean includesExactPoint(From_point point) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean includesExactPoint(From_exact_point point) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean includesExactPoint(Until_exact_point point) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean includesExactPoint(Until_point point) {
-		return this.areEquals(point.getValue());
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

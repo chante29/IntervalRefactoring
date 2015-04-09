@@ -3,7 +3,9 @@ package intervals;
 public abstract class Point {
 	
 	private double value;
-
+	
+	
+	
 	public Point(double minimum) {
 		super();
 		this.value = minimum;
