@@ -1,6 +1,6 @@
 package intervals;
 
-public abstract class Interval {
+public class Interval {
 	private PointSet pointSet;
 	
 	public Interval(Point minimum, Point maximum) {
