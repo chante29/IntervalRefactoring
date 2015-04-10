@@ -4,7 +4,7 @@ public class PointSet {
 	private Point minimum;
 	private Point maximum;
 
-	public PointSet(Point minimum, Point maximum, Opening typeInterval) {
+	public PointSet(Point minimum, Point maximum) {
 		this.minimum = minimum;
 		this.maximum = maximum;
 	}

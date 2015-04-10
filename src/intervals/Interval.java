@@ -2,11 +2,9 @@ package intervals;
 
 public abstract class Interval {
 	private PointSet pointSet;
-	private Opening opening;
 	
-	public Interval(Point minimum, Point maximum, Opening opening) {
-		this.pointSet = new PointSet(minimum, maximum, opening);
-		this.setOpening(opening);
+	public Interval(Point minimum, Point maximum) {
+		this.pointSet = new PointSet(minimum, maximum);
 	}
 
 	public double midPoint() {
@@ -35,15 +33,6 @@ public abstract class Interval {
 	public boolean equals(Object object) {
 		// TODO
 		return false;
-	}
-
-
-	public Opening getOpening() {
-		return opening;
-	}
-
-	public void setOpening(Opening opening) {
-		this.opening = opening;
 	}
 	
 	public Point getPointMinimum() {
