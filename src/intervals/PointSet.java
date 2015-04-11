@@ -10,37 +10,20 @@ public class PointSet {
 	}
 
 	public double midPoint() {
-		return (this.getMaximum() + this.getMinimum()) / 2;
+		return (this.getMaximum().getValue() + this.getMinimum().getValue()) / 2;
 	}
 
-	public double getMinimum() {
-		return minimum.getValue();
+	public Point getMinimum() {
+		return minimum;
 	}
 
-	public double getMaximum() {
-		return maximum.getValue();
-	}
-
-	public boolean minimumIncludes(double value){
-		return this.minimum.includes(value); 
-	}
-
-	public boolean maximumIncludes(double value){
-		return this.maximum.includes(value);
-	}
-
-	
-	public Point getPointMinimum(){
-		return this.minimum;
-	}
-	
-	public Point getPointMaximum(){
-		return this.maximum;
+	public Point getMaximum() {
+		return maximum;
 	}
 
 	public boolean includes(Interval interval) {
-		return this.getPointMinimum().includes(interval.getPointMinimum()) 
-				&& this.getPointMaximum().includes(interval.getPointMaximum());
+		return this.getMinimum().includes(interval.getMinimum()) 
+				&& this.getMaximum().includes(interval.getMaximum());
 	}
 	
 	
@@ -49,11 +32,11 @@ public class PointSet {
 	}
 	
 	private boolean includesInside(Point point){
-		return (this.getPointMinimum().areLess(point.getValue()) && this.getPointMaximum().areGreatest(point.getValue()));
+		return (this.getMinimum().areLess(point.getValue()) && this.getMaximum().areGreatest(point.getValue()));
 	}
 	
 	private boolean includesInEdges(Point point){
-		return this.getPointMinimum().includesExactPoint(point) || this.getPointMaximum().includesExactPoint(point);
+		return this.getMinimum().includesExactPoint(point) || this.getMaximum().includesExactPoint(point);
 	}
 
 

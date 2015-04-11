@@ -12,7 +12,7 @@ public class Interval {
 	}
 
 	public boolean includes(double value){
-		return this.pointSet.minimumIncludes(value) && this.pointSet.maximumIncludes(value);
+		return this.pointSet.getMinimum().includes(value) && this.pointSet.getMaximum().includes(value);
 	} 
 	
 	public boolean includes(Interval interval){
@@ -20,7 +20,7 @@ public class Interval {
 	}
 
 	public boolean intersectsWith(Interval interval) {
-		return this.pointSet.intersectWith(interval.getPointMinimum()) || this.pointSet.intersectWith(interval.getPointMaximum());
+		return this.pointSet.intersectWith(interval.getMinimum()) || this.pointSet.intersectWith(interval.getMaximum());
 	}
 
 	@Override
@@ -35,19 +35,11 @@ public class Interval {
 		return false;
 	}
 	
-	public Point getPointMinimum() {
-		return this.pointSet.getPointMinimum();
-	}
-	
-	public Point getPointMaximum() {
-		return this.pointSet.getPointMaximum();
-	}
-	
-	public double getMinimum() {
+	public Point getMinimum() {
 		return this.pointSet.getMinimum();
 	}
 	
-	public double getMaximum() {
+	public Point getMaximum() {
 		return this.pointSet.getMaximum();
 	}
 	
